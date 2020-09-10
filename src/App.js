@@ -1,18 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { MenuItem, FormControl, Select, Card, CardContent} from "@material-ui/core";
+import { MenuItem, FormControl, Select, Card, CardContent } from "@material-ui/core";
 import InfoBox from './InfoBox';
 import Map from './Map';
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
+  const [countryInfo, setCountryInfo] = useState({});
   // https://disease.sh/v3/covid-19/countries
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
-    console.log(countryCode);
-    setCountry(countryCode);
-  }
+
+    const url = countryCode === "worldwide"
+      ? "https://disease.sh/v3/covid-19/all"
+      : `https://disease.sh/v3/covid-19/countries/${countryCode}`
+
+    await fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        setCountry(countryCode);
+        setCountryInfo(data);
+
+      })
+  };
 
   useEffect(() => {
     //async -> send a request,wait for it, do something with 
@@ -47,18 +58,18 @@ function App() {
         </div>
 
         <div className="app__stats">
-          <InfoBox title="Coronavirus Cases" total={3000} cases={123}></InfoBox>
-          <InfoBox title="Recovered" total={3000} cases={123}></InfoBox>
-          <InfoBox title="Deaths" total={3000} cases={123}></InfoBox>
+          <InfoBox title="Coronavirus Cases" total={countryInfo.cases} cases={countryInfo.todayCases}></InfoBox>
+          <InfoBox title="Recovered" total={countryInfo.recovered} cases={countryInfo.todayRecovered}></InfoBox>
+          <InfoBox title="Deaths" total={countryInfo.deaths} cases={countryInfo.todayDeaths}></InfoBox>
         </div>
-                <Map></Map>
+        <Map></Map>
       </div>
       <Card className="app__right">
         <CardContent>
           <h3>Live Cases by Country</h3>
           <h3>Worldwide new cases</h3>
         </CardContent>
-      
+
       </Card>
 
 
