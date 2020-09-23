@@ -13,10 +13,11 @@ body {
 }
 
 .app__left {
-    flex: 0.9;
+    flex: 0.8;
 }
 
 .app__right {
+  background-color: #f5f6fa;
 }
 
 .app__header {
