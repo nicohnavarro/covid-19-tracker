@@ -15,6 +15,7 @@ function App() {
   const [tableData, setTableData] = useState([]);
   const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
   const [mapZoom, setMapZoom] = useState(3);
+  const [mapCountries, setMapCountries] = useState([]);
 
   // https://disease.sh/v3/covid-19/countries
   const onCountryChange = async (event) => {
@@ -47,6 +48,7 @@ function App() {
             }));
           const sortedData = sortData(data);
           setTableData(sortedData);
+          setMapCountries(data);
           setCountries(countries);
         });
     };
@@ -73,7 +75,7 @@ function App() {
           <InfoBox title="Recovered" total={countryInfo.recovered} cases={countryInfo.todayRecovered}></InfoBox>
           <InfoBox title="Deaths" total={countryInfo.deaths} cases={countryInfo.todayDeaths}></InfoBox>
         </div>
-        <Map center={mapCenter} zoom={mapZoom}></Map>
+        <Map  countries={mapCountries} center={mapCenter} zoom={mapZoom}></Map>
       </div>
       <Card className="app__right">
         <CardContent>
