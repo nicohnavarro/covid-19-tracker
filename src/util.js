@@ -28,7 +28,11 @@ export const sortData = (data) => {
     return sortedData.sort((a, b) => (a.cases > b.cases) ? -1 : 1)
 }
 
-export const showDataOnMap = (data, casesType = 'cases') => (
+export const prettyPrintStat = (stat) =>
+  stat ? `+${numeral(stat).format("0.0a")}` : "+0";
+  
+
+export const showDataOnMap = (data, casesType) => (
     data.map(country => (
         <Circle
             center={[country.countryInfo.lat, country.countryInfo.long]}
