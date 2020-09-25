@@ -30,6 +30,7 @@ function App() {
       .then(data => {
         setCountry(countryCode);
         setCountryInfo(data);
+        console.log(data);
         setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
         setMapZoom(4);
       })
