@@ -35,10 +35,17 @@
 }
 
 .info-cases {
+    font-size: 1rem;
+    margin-top: 1%;
+    background-color: rgba(114, 29, 29, 0.946);
 }
 .info-recovered {
+    font-size: 1rem;
+    margin-top: 1%;
+    background-color: rgba(22, 136, 26, 0.939);
 }
 .info-deaths {
   font-size: 1rem;
   margin-top: 1%;
+  background-color: rgba(31, 30, 30, 0.912);
 }

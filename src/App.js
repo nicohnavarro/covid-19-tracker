@@ -93,10 +93,10 @@ function App() {
           <InfoBox  onClick={(e) => setCasesType("cases")}
             title="Coronavirus Cases"
             isRed
-            active={casesType === "cases"} total={countryInfo.cases} cases={countryInfo.todayCases}></InfoBox>
+            active={casesType === "cases"} total={numeral(countryInfo.cases).format("0,0a")} cases={prettyPrintStat(countryInfo.todayCases)}></InfoBox>
           <InfoBox onClick={(e) => setCasesType("recovered")}
             title="Recovered"
-            active={casesType === "recovered"} total={countryInfo.recovered} cases={countryInfo.todayRecovered}></InfoBox>
+            active={casesType === "recovered"} total={numeral(countryInfo.recovered).format("0,0a")}cases={prettyPrintStat(countryInfo.todayRecovered)}></InfoBox>
           <InfoBox onClick={(e) => setCasesType("deaths")}
             title="Deaths"
             isRed
