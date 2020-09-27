@@ -2,14 +2,20 @@
   margin: 0;
 }
 
-body {
-  background-color: #f5f6fa;
+body{
+  background-color: rgb(24, 20, 20);
+  color: white;
 }
 
 .app {
   display: flex;
   justify-content: space-evenly;
   padding: 2%;
+
+}
+
+.app__select {
+  color:white!important;
 }
 
 .app__left {

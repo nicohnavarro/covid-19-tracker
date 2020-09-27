@@ -79,8 +79,8 @@ function App() {
       <div className="app__left">
         <div className="app__header">
           <h1>COVID-19 TRACKER</h1>
-          <FormControl className="app__dropdown">
-            <Select variant="outlined" value={country} onChange={onCountryChange}>
+          <FormControl color="secondary" className="app__dropdown">
+            <Select className="app__select" variant="outlined" value={country} onChange={onCountryChange}>
               <MenuItem value="worldwide">Worldwide</MenuItem>
               {countries.map((country) => (
                 <MenuItem value={country.value}>{country.name}</MenuItem>

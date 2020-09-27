@@ -10,7 +10,8 @@ function Map({ countries, casesType, center, zoom }) {
         <div className="map">
             <LeafletMap center={center} zoom={zoom}>
                 <TileLayer
-                    url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    url='http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
+                    attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                 />
                 {showDataOnMap(countries, casesType)}
             </LeafletMap>
