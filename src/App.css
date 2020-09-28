@@ -23,7 +23,12 @@ body{
 }
 
 .app__right {
-  background-color: #f5f6fa;
+  background-color: #181A1B!important;
+  color: rgba(232, 230, 227, 0.87) !important;
+}
+
+.app__right h3 {
+  margin: 1rem;
 }
 
 .app__header {
@@ -36,7 +41,9 @@ body{
 .app__stats {
   display: flex;
   justify-content: space-between;
+
 }
+
 
 @media (max-width: 990px){
     .app{

@@ -1,10 +1,15 @@
 .map {
   height: 50vh;
-  background-color: white;
+  background-color: #181a1b !important;
+  color: white !important;
   padding: 1rem;
   border-radius: 1rem;
   margin-top: 1rem;
   box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+}
+.leaflet-control-container a {
+  background-color: #181a1b !important;
+  color: white !important;
 }
 
 .map .leaflet-container {
@@ -12,16 +17,16 @@
 }
 
 .info-flag {
-  height: 5rem;
+  height: 6rem;
   width: 100%;
   background-size: cover;
   border-radius: 0.2rem;
+  margin-bottom: 1rem;
 }
 
 .info-name {
   font-size: 1rem;
   font-weight: bold;
-  color: #555;
 }
 
 .info-flag img {
@@ -32,20 +37,39 @@
 
 .info-container {
   width: 100%;
+  background-color: #111213!important;
+  color: white !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
 }
 
 .info-cases {
     font-size: 1rem;
     margin-top: 1%;
-    background-color: rgba(114, 29, 29, 0.946);
+    background-color: rgba(221, 15, 15, 0.946);
+    border-radius: 4rem;
+    padding: 0 0 1px 5px;
 }
 .info-recovered {
     font-size: 1rem;
     margin-top: 1%;
-    background-color: rgba(22, 136, 26, 0.939);
+    background-color: rgba(11, 129, 15, 0.939);
+    border-radius: 4rem;
 }
 .info-deaths {
   font-size: 1rem;
   margin-top: 1%;
-  background-color: rgba(31, 30, 30, 0.912);
+  background-color: rgba(90, 87, 87, 0.994);
+  border-radius: 4rem;
+  padding: 0 0 1px 5px;
+}
+
+
+.leaflet-popup-content-wrapper {
+  background-color: #181a1b !important;
+  color: white !important;
 }
