@@ -6,7 +6,7 @@ App de covid
 
 ### 
 
-![principal]()
+![principal](https://github.com/nicohnavarro/covid-19-tracker/blob/master/src/images/covidtracker.PNG)
 
 
 ## Autor ✒️
